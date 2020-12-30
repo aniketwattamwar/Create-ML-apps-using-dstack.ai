@@ -47,12 +47,13 @@ print(test)
 
 from sklearn.ensemble import RandomForestClassifier
 random = RandomForestClassifier()
-random.fit(train,y) 
+random.fit(train,y)
+#When running it normmaly without pushing it to dstack it gave the output
 y_pred = random.predict(test)
 
 ds.push("Random_Forest", random, "Random Forest Loan Prediction")
 
-
+#The below two lines when uncommented gave the error- Comment the line 51 if below two are to be used
 # model = ds.pull('/dstack/Random_Forest')
 # y_pred = model.predict(test)
 print('predictions')
